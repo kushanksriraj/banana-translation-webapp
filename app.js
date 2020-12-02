@@ -1,5 +1,14 @@
-// alert("hello")
-var userName = prompt("Enter your name");
+// get the button id as reference using DOM API
+// var buttonRef = document.querySelector("button");
+// var buttonRef = document.querySelector("button[name='btn']");
+var buttonRef = document.querySelector("#btn-translate");
 
-console.log("Hello " + userName);
 
+
+// callback function() to handle click event 
+function clickEventHandler() {
+    console.log("Cliked");
+};
+
+// add click event and callback function to the button reference
+buttonRef.addEventListener("click", clickEventHandler);
