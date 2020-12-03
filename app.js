@@ -2,7 +2,9 @@ var buttonRef = document.querySelector("#btn-translate");
 var textInputRef = document.querySelector("#txt-input");
 var textOutputRef = document.querySelector("#text-output");
 
-const url = "https://lessonfourapi.tanaypratap.repl.co/tran-slate/yoda.json";
+// const url = "https://lessonfourapi.tanaypratap.repl.co/tran-slate/yoda.json";
+
+const url = "https://api.funtranslations.com/translate/hodor.json";
 
 
 function generateUrl(text){
