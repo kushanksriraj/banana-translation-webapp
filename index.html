@@ -5,38 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banana Translation</title>
-
-    <style>
-        button {
-            background-color: black;
-            color: white;
-            border-radius: 4px;
-            height: 2rem;
-            margin-left: 2rem;
-        }
-
-        textarea {
-            display: block;
-            width: 70%;
-            height: 20vh;
-            margin: 2rem;
-            padding: 0.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
 
 </head>
 
 <body>
-    <h1>A vanillaJS webapp that translates to banana language!</h1>
 
-    <textarea id="txt-input" placeholder="This is a placeholder text. Enter some text:"></textarea>
+    <nav>
+        banana talk
+    </nav>
 
+    <main>
 
-    <button id="btn-translate">Translate</button>
+        <textarea id="txt-input" placeholder="Enter some text to translate to banana language:"></textarea>
 
-    <h2>Output :</h2>
-    <div id="text-output"></div>
+        <button id="btn-translate">Translate</button>
 
+        <div class="label">Translated text: 👇</div>
+        <div id="txt-output"></div>
+
+    </main>
+
+    <footer>
+        <div>About</div>
+        <p>Convert from English to Minion speak. This language is spoken by the minions in Despicable Me. The language
+            is actually lots of languages. Yi kai yai yai bananna!</p>
+    </footer>
 
     <script src="app.js" type="text/javascript"></script>
 </body>
