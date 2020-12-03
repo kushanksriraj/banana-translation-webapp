@@ -23,7 +23,7 @@ function clickEventHandler() {
     
     var textInput = textInputRef.value;
 
-    fetch(generateUrl(textInput)).then(response => response.json()).then(response => textOutputRef.innerText = response.contents.translated).catch(error => errorHandler(error));
+    fetch(generateUrl(textInput)).then(response => response.json()).then(response => textOutputRef.innerText = response.contents.translated).catch(errorHandler);
 
 }
 
