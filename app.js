@@ -1,27 +1,21 @@
-// var buttonRef = document.querySelector("#btn-translate");
-// var textInputRef = document.querySelector("#txt-input");
-// var textOutputRef = document.querySelector("#text-output");
+var buttonRef = document.querySelector("#btn-translate");
+var textInputRef = document.querySelector("#txt-input");
+var textOutputRef = document.querySelector("#text-output");
 
-// function clickEventHandler() {
+const url = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+
+function generateUrl(text){
+    var temp = url + "?" + "text=" + text;
+    // console.log(encodeURI(temp));
+    return encodeURI(temp);
+}
+
+function clickEventHandler() {
     
-//     var textInput = textInputRef.value;
-//     console.log(textInput);  
-//     textOutputRef.innerText = textInput;
-// };
+    var textInput = textInputRef.value;
 
-// buttonRef.addEventListener("click", clickEventHandler);
+    fetch(generateUrl(textInput)).then(response => response.json()).then(response => textOutputRef.innerText = response.contents.translated);
 
+}
 
-// using arrow function
-fetch("https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=neogcamp test").then(response => response.json()).then(response => console.log(response.contents.translated));
-
-// // using normal function
-// fetch("https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json?text=neogcamp test").then(function convert2json(response){
-//     return response.json();
-// }).then(function logOutput(response){
-//     console.log(response.contents.translated);
-// });
-
-
-
-
+buttonRef.addEventListener("click", clickEventHandler);
