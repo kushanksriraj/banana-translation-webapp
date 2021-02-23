@@ -1,26 +1,25 @@
-var buttonRef = document.querySelector("#btn-translate");
-var textInputRef = document.querySelector("#txt-input");
-var textOutputRef = document.querySelector("#txt-output");
+const buttonRef = document.querySelector("#btn-translate");
+const textInputRef = document.querySelector("#txt-input");
+const textOutputRef = document.querySelector("#txt-output");
 
-
-const url = "https://api.funtranslations.com/translate/minion.json";
+const url = `https://api.funtranslations.com/translate/minion.json`;
 
 function generateUrl(text) {
 
-    var temp = url + "?" + "text=" + text;
+    const temp = `${url}?text=${text}`;
     return encodeURI(temp);
 }
 
-function errorHandler(error) {
+const errorHandler = error => {
 
-    console.log("Some error occured!");
+    console.log(`Some error occured!`);
     console.log(error);
-    alert("Some error occured! Please try after some time.")
+    alert(`Some error occured! Please try after some time.`)
 }
 
-function clickEventHandler() {
+const clickEventHandler = () => {
 
-    var textInput = textInputRef.value;
+    const textInput = textInputRef.value;
 
     fetch(generateUrl(textInput))
         .then(response => response.json())
