@@ -4,7 +4,7 @@ const textOutputRef = document.querySelector("#txt-output");
 
 const url = `https://api.funtranslations.com/translate/minion.json`;
 
-function generateUrl(text) {
+const generateUrl = text => {
 
     const temp = `${url}?text=${text}`;
     return encodeURI(temp);
