@@ -17,16 +17,18 @@ const errorHandler = error => {
     alert(`Some error occured! Please try after some time.`)
 }
 
-const clickEventHandler = () => {
-
+const clickEventHandler = async () => {
+    
     const textInput = textInputRef.value;
-
-    fetch(generateUrl(textInput))
-        .then(response => response.json())
-        .then(json => {
-            textOutputRef.innerText = json.contents.translated;
-        })
-        .catch(errorHandler);
+    
+    try{
+    const res = await fetch(generateUrl(textInput));
+    const json = await res.json();
+    textOutputRef.innerText = json.contents.translated;
+   }
+   catch (err) {
+    errorHandler(err);
+   }
 }
 
 buttonRef.addEventListener("click", clickEventHandler);
